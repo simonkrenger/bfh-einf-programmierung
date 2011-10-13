@@ -16,6 +16,8 @@ public class BuildingViewer {
 		BuildingsComponent bldC = new BuildingsComponent();
 		frame.add(bldC);
 		
+		
+		
 		frame.setVisible(true);
 
 	}
