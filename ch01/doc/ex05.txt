@@ -1,0 +1,15 @@
+<pre><p>Create a new class &quot;HelloUser&quot;, which asks the user to enter his/her name and then displays &quot;Hello &lt;name&gt;&quot;. For this, copy the following code into Eclipse and run the program.
+
+import java.util.Scanner;
+
+public class HelloUser {
+	public static void main(String[] args) {
+		String name = &quot;&quot;;
+		Scanner input = new Scanner(System.in);
+		System.out.println(&quot;Enter your name:&quot;);
+		name = input.nextLine();
+		System.out.println(&quot;Hello &quot; + name);
+	}
+}
+
+Change the program such that it asks for both the first and the last name, and then displays &quot;Hello &lt;firstname&gt; &lt;lastname&gt;&quot;.</p></pre>

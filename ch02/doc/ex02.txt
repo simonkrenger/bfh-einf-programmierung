@@ -1,0 +1,3 @@
+<pre><p>Write a Java program, which replaces all occurrences of the letter 'a' in a string by 'e' and vice versa. 
+
+Test your program with the string &quot;Berner Fachhochschule&quot; =&gt; &quot;Barnar Fechhochschula&quot;.</p></pre>

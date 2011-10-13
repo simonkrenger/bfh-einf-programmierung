@@ -1,0 +1,5 @@
+<pre><p>Write a Java program, which first creates two Rectangle objects and then computes their intersection (which is again a Rectangle object). Print the result in a proper way.
+
+What happens, if the two original rectangles are not overlapping?
+
+Extend the program, such the the input rectangles can be entered by the user.</p></pre>

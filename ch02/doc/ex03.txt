@@ -1,0 +1,8 @@
+<pre><p>Create an object of the class &quot;GregorianCalendar&quot; and print out the following information:
+
+- Today's date in the format &quot;day.month.year (week no: xx)&quot;
+- The date in 100 days from today (same format)
+- The length of Mozart's life in number of days (January 27th, 1756 - December, 5th, 1791)
+- The date of Mozart's death, based on his birthdate and the number of days he lived
+
+Remark: For an object of the class &quot;GregorianCalendar&quot;, you can also apply the methods of the class &quot;Calendar&quot;. Use &quot;get()&quot;, &quot;set()&quot;, &quot;add()&quot; and &quot;getTimeInMillis()&quot;.</p></pre>

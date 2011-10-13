@@ -1,0 +1,11 @@
+<pre><p>Make sure Java SE 6 or (Java SE 7) is properly installed on your machine. For this you will need the the Java Development Kit (JDK), which includes the Java Runtime Environment (JRE). Java is pre-installed on Mac OS X and on most Linux distributions.
+ 
+For Windows and other systems, you may download it either from
+
+<a href="http://www.oracle.com/technetwork/java/index.html" target="_blank">http://www.oracle.com/technetwork/java/index.html</a>
+
+or from
+
+<a href="http://www.java.com/de/download/manual.jsp" target="_blank">http://www.java.com/de/download/manual.jsp</a>
+
+Follow precisely the installation instructions. </p></pre>

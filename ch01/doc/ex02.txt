@@ -1,0 +1,2 @@
+<pre><p>Create a &quot;HelloWorld&quot; program (or copy it from Moodle) in a normal text editor. Compile and run it from the console. 
+</p></pre>

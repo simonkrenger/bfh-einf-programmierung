@@ -1,0 +1,1 @@
+<pre><p>Run Eclipse and define your workspace. Create a new Java project called &quot;HelloWorld&quot; or similar. Inside the project, create a new Java class &quot;HelloWorld&quot;. Write the source code for class and the main method or copy it from Moodle. Run the program from Eclipse.</p></pre>

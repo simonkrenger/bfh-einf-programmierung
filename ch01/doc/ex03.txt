@@ -1,0 +1,5 @@
+<pre><p>Install Eclipse on your machine. For this, download &quot;Eclipse IDE for Java Developers&quot; from
+
+<a href="http://www.eclipse.org/downloads/" target="_blank">http://www.eclipse.org/downloads/</a>
+
+and follow the installation instructions.</p></pre>

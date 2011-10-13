@@ -1,0 +1,18 @@
+<pre><p>Design and implement a class &quot;car&quot; with the following properties:
+
+- a car has a certain gas consumption (measured on liters/100km)
+- a car's tank has a certain gas level (measured in liters)
+
+The gas consumption is specified in the constructor, whereas the tank is initially empty.
+
+Provide methods to:
+
+- fill up the tank (liters)
+- drive a certain distance (km)
+- return the current amount of gas (liters)
+
+Document your code.
+
+Write a test program.
+
+</p></pre>

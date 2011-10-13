@@ -1,0 +1,11 @@
+<pre><p>To get more familiar with Eclipse and its features, work step-by-step through the introductory tutorial on
+
+<a href="http://www.vogella.de/articles/Eclipse/article.html" target="_blank">http://www.vogella.de/articles/Eclipse/article.html</a>
+
+You may also want to look at the shortcuts tutorial on
+
+<a href="http://www.vogella.de/articles/EclipseShortcuts/article.html" target="_blank">http://www.vogella.de/articles/EclipseShortcuts/article.html</a>
+
+or at the debugging tutorial on 
+
+<a href="http://www.vogella.de/articles/EclipseDebugging/article.html" target="_blank">http://www.vogella.de/articles/EclipseDebugging/article.html</a></p></pre>
