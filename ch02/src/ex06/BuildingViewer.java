@@ -2,6 +2,13 @@ package ex06;
 
 import javax.swing.JFrame;
 
+/**
+ * A viewer for our BuildingComponent.
+ * Displays a frame and adds a BuildingComponent to the frame.
+ * @author simon
+ * @since 14.10.2011
+ *
+ */
 public class BuildingViewer {
 
 	/**
@@ -15,8 +22,6 @@ public class BuildingViewer {
 		
 		BuildingsComponent bldC = new BuildingsComponent();
 		frame.add(bldC);
-		
-		
 		
 		frame.setVisible(true);
 

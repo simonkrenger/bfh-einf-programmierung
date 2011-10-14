@@ -11,10 +11,7 @@ import javax.swing.JComponent;
 
 public class BuildingsComponent extends JComponent {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1111511804162144460L;
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Defines the clearance between the bars.
@@ -39,19 +36,11 @@ public class BuildingsComponent extends JComponent {
 		bldList.add(new Building("Eiffel Tower", 324));
 	}
 
-
-	/**
-	 * This method is called everytime the window is resized
-	 */
 	public void paintComponent(Graphics g) {
 		Graphics2D cGraphics = (Graphics2D) g;
 		
-		// We need these values for our calculations
-		double frameHeight = g.getClipBounds().getHeight();
-		double frameWidth = g.getClipBounds().getWidth();
-		
 		// Alright, calculate the width of a single bar
-		double recalculatedBarWidth = ((frameHeight-CLEARANCE)/(bldList.size()))-CLEARANCE;
+		double recalculatedBarWidth = (getHeight() - CLEARANCE) / bldList.size() - CLEARANCE;
 		
 		// For the purpose of resizing the X value of the rectangle, get the highest building
 		double largestBuilding = getHeightOfLargestTower(bldList);
@@ -63,12 +52,14 @@ public class BuildingsComponent extends JComponent {
 		for (int i = 0; i < bldList.size(); i++) {
 			Building tmpBld = bldList.get(i);
 			
-			// Calculate the Y position of this building
-			double yPosition = CLEARANCE + i*(CLEARANCE+recalculatedBarWidth);
+			// Calculate the Y position of this building on our frame
+			double yPosition = CLEARANCE + i * (CLEARANCE + recalculatedBarWidth);
 			
-			// How high does this building have to be painted?
-			double rectangleWidth = tmpBld.getHeight()/largestBuilding*frameWidth*0.9;
+			// How high (=width of the rectangle) does this building have to be painted?
+			// Multiply the value with 0.9 so we do not fill the window completely and leave free space left and right
+			double rectangleWidth = tmpBld.getHeight() / largestBuilding * getWidth() * 0.9;
 
+			
 			cGraphics.setColor(Color.RED);
 			Rectangle2D bldRect = new Rectangle2D.Double(10, yPosition, rectangleWidth, recalculatedBarWidth);
 			cGraphics.fill(bldRect);

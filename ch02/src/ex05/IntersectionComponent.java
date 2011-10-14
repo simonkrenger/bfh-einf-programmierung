@@ -9,6 +9,8 @@ import javax.swing.JComponent;
 
 public class IntersectionComponent extends JComponent {
 	
+	private static final long serialVersionUID = 1L;
+
 	public void paintComponent(Graphics g) {  
 		Graphics2D g2 = (Graphics2D) g;
 		
@@ -21,6 +23,7 @@ public class IntersectionComponent extends JComponent {
 		if(box1.intersects(box2))
 		{
 			Rectangle2D boxIntersection = box1.createIntersection(box2);
+			
 			g2.setColor(Color.RED);
 			g2.fill(boxIntersection);
 			g2.draw(boxIntersection);
