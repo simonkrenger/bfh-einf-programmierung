@@ -22,13 +22,14 @@ public class BuildingsComponent extends JComponent {
 	 * Array to hold a dynamic amount of buildings
 	 */
 	private ArrayList<Building> bldList = new ArrayList<Building>();
-
+	
 	/**
 	 * Constructor for our Component that draws buildings
 	 */
 	public BuildingsComponent() {
 		
-		// Create objects for our 5 towers and add them to the list
+		// Create objects for our towers and add them to the list
+		//bldList.add(new Building("Burj Khalifa", 828));
 		bldList.add(new Building("Sears Towers", 527));
 		bldList.add(new Building("Taipei 101", 508));
 		bldList.add(new Building("Petronas Towers", 452));
@@ -37,7 +38,11 @@ public class BuildingsComponent extends JComponent {
 	}
 
 	public void paintComponent(Graphics g) {
+		System.out.println("Resized!");
+		
 		Graphics2D cGraphics = (Graphics2D) g;
+		
+		CLEARANCE = getHeight()/bldList.size()/4;
 		
 		// Alright, calculate the width of a single bar
 		double recalculatedBarWidth = (getHeight() - CLEARANCE) / bldList.size() - CLEARANCE;
