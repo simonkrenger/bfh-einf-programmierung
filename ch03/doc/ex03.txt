@@ -1,0 +1,10 @@
+<pre><p>Write a class DataSet, which computes certain statistical data with respect to a sequence of integers. Supply the following methods:
+- void addValue(int x)
+- int getSum()
+- double getAverage()
+- int getMax()
+- int getMin()
+
+Hint: Keep track of the current values. Use Integer.MIN_VALUE and Integer.MAX_VALUE as initial values.
+
+Write a class DataSetTester for testing.</p></pre>

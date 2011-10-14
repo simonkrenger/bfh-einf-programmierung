@@ -1,0 +1,26 @@
+<pre><p>Write a class RationalNumber to represents positive rational numbers (e.g. 1/3, 9/16, etc.) precisely. The class should have at least the following public methods:
+
+- RationalNumber add(RationalNumber x)
+- RationalNumber subtract(RationalNumber x)
+- RationalNumber multiply(RationalNumber x)
+- RationalNumber divide(RationalNumber x)
+- String toString() 
+- Double toDouble() 
+
+Provide two constructors:
+
+RationalNumber(long value) 
+RationalNumber(long nominator, long denominator) 
+
+Hint 1: Write a private method &quot;void reduce()&quot; to reduce (kürzen) the given rational number.
+
+Hint 2: Copy/paste the following helper method:
+
+private static int gcd(int m, int n) {
+   if (n == 0) 
+      return m;
+   else 
+      return gcd(n, m % n);
+}
+
+Write a class RationalNumberTester for testing.</p></pre>

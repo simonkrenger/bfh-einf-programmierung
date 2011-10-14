@@ -1,0 +1,26 @@
+<pre><p>Enhance the CashRegister class by adding separate methods 
+- enterDollars(int n)
+- enterQuarters(int n)
+- enterDimes(int n)
+- enterNickels(int n)
+
+To ensure that the registers works correctly, use the class BigDecimals instead of numbers of type double.
+
+Use this tester class:
+
+public class CashRegisterTester {
+
+	public static void main(String[] args) {
+		CashRegister register = new CashRegister();
+
+		register.recordPurchase(0.75);
+		register.recordPurchase(1.50);
+		register.enterDollars(2);
+		register.enterDimes(3);
+		System.out.print(&quot;Change: &quot;);
+		System.out.println(register.giveChange());
+		System.out.println(&quot;Expected: 0.05&quot;);
+	}
+}
+
+</p></pre>

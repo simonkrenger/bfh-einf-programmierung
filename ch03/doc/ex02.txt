@@ -1,0 +1,12 @@
+<pre><p>Write a program which computes for two input integer values
+- the sum
+- the difference
+- the product
+- the average
+- the distance (absolute value of the difference)
+- the maximum
+- the minimum
+
+To do so, implement a class Pair, which stores the two value and which provides a method for each of the above computations, e.g. getSum, getDifference, etc.
+
+Write a class PairTester for testing.</p></pre>
