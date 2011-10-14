@@ -3,6 +3,7 @@ public class CashRegister {
 	public static final double DIME_VALUE = 0.1;
 	public static final double NICKEL_VALUE = 0.05;
 
+	// Test
 	private double purchase;
 	private double payment;
 
