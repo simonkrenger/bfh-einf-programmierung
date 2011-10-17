@@ -5,7 +5,7 @@ package ex02;
  * There are additional methods for performing certain calculations.
  * 
  * @author simon
- * @since 15.10.2011
+ * @since 17.10.2011
  *
  */
 public class Pair {
@@ -87,10 +87,10 @@ public class Pair {
 	
 	/**
 	 * Calculates the average of the two numbers.
-	 * @return The average of the two numbers.
+	 * @return The average of the two numbers as a double
 	 */
-	public int getAverage() {
-		return (number1 + number2) / 2;
+	public double getAverage() {
+		return ((double) getSum()) / 2;
 	}
 	
 	/**
