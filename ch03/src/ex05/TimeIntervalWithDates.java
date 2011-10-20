@@ -35,16 +35,16 @@ public class TimeIntervalWithDates {
 	}
 
 	/**
-	 * Computes the difference in minutes between the two times provided in the constructor.
-	 * @return The difference in minutes (
+	 * Computes the difference in minutes between the two times provided.
+	 * @return The amount of minutes between the times (without the hours)
 	 */
 	public int getMinutes() {
 		return (int) Math.abs(((time2 - time1) / (1000 * 60)) % 60);
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Computes the difference in hours between the two times provided
+	 * @return The amount of hours between the times
 	 */
 	public int getHours() {
 		return (int) Math.abs(((time2 - time1) / (1000 * 60 * 60)) % 24);
