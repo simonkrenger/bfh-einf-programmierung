@@ -15,9 +15,9 @@ package ex04;
 public class RationalNumber {
 
 	/**
-	 * Holds the value of the nominator
+	 * Holds the value of the numerator
 	 */
-	private long nominator;
+	private long numerator;
 	
 	/**
 	 * Holds the value of the denominator
@@ -30,27 +30,27 @@ public class RationalNumber {
 	 * @param value The integer value to be represented as RationalNumber
 	 */
 	public RationalNumber(int value) {
-		this.nominator = value;
+		this.numerator = value;
 		this.denominator = 1;
 	}
 
 	/**
-	 * Constructor for the class that takes two long values as the nominator and the denominator.
-	 * @param nominator The nominator of the value
+	 * Constructor for the class that takes two long values as the numerator and the denominator.
+	 * @param numerator The numerator of the value
 	 * @param denominator The denominator of the value
 	 */
-	public RationalNumber(long nominator, long denominator) {
-		this.nominator = nominator;
+	public RationalNumber(long numerator, long denominator) {
+		this.numerator = numerator;
 		this.denominator = denominator;
 	}
 	
 	/**
-	 * Constructor for the class that takes two integer values as the nominator and the denominator
-	 * @param nominator The nominator of the value to be represented as a RationalNumber
+	 * Constructor for the class that takes two integer values as the numerator and the denominator
+	 * @param numerator The numerator of the value to be represented as a RationalNumber
 	 * @param denominator The denominator of the value to be represented as a RationalNumber
 	 */
-	public RationalNumber(int nominator, int denominator) {
-		this.nominator = nominator;
+	public RationalNumber(int numerator, int denominator) {
+		this.numerator = numerator;
 		this.denominator = denominator;
 	}
 
@@ -68,11 +68,11 @@ public class RationalNumber {
 	}
 	
 	/**
-	 * Retreives the nominator of the rational number
-	 * @return The nominator
+	 * Retreives the numerator of the rational number
+	 * @return The numerator
 	 */
 	public long getNominator() {
-		return this.nominator;
+		return this.numerator;
 	}
 	
 	/**
@@ -88,8 +88,8 @@ public class RationalNumber {
 	 * @return The same rational number, but reduced
 	 */
 	public RationalNumber reduce() {
-		long gcd = gcd(this.nominator, this.denominator);
-		return new RationalNumber(this.nominator/gcd, this.denominator/gcd);
+		long gcd = gcd(this.numerator, this.denominator);
+		return new RationalNumber(this.numerator/gcd, this.denominator/gcd);
 	}
 	
 	/**
@@ -99,9 +99,9 @@ public class RationalNumber {
 	 */
 	public RationalNumber add(RationalNumber number) {
 		long multipliedDenominator = this.denominator * number.getDenominator();
-		long firstNominator = this.nominator * number.getDenominator();
-		long secondNominator = number.getNominator() * this.denominator;
-		return new RationalNumber(firstNominator + secondNominator, multipliedDenominator).reduce();
+		long firstNumerator = this.numerator * number.getDenominator();
+		long secondNumerator = number.getNominator() * this.denominator;
+		return new RationalNumber(firstNumerator + secondNumerator, multipliedDenominator).reduce();
 	}
 	
 	/**
@@ -111,9 +111,9 @@ public class RationalNumber {
 	 */
 	RationalNumber subtract(RationalNumber number) {
 		long multipliedDenominator = this.denominator * number.getDenominator();
-		long firstNominator = this.nominator * number.getDenominator();
-		long secondNominator = number.getNominator() * this.denominator;
-		return new RationalNumber(firstNominator - secondNominator, multipliedDenominator).reduce();
+		long firstNumerator = this.numerator * number.getDenominator();
+		long secondNumerator = number.getNominator() * this.denominator;
+		return new RationalNumber(firstNumerator - secondNumerator, multipliedDenominator).reduce();
 	}
 	
 	/**
@@ -122,7 +122,7 @@ public class RationalNumber {
 	 * @return The result of the multiplication
 	 */
 	RationalNumber multiply(RationalNumber x) {
-		return new RationalNumber(this.nominator * x.getNominator(), this.denominator * x.getDenominator()).reduce();
+		return new RationalNumber(this.numerator * x.getNominator(), this.denominator * x.getDenominator()).reduce();
 	}
 	
 	/**
@@ -131,7 +131,7 @@ public class RationalNumber {
 	 * @return The result of the division.
 	 */
 	RationalNumber divide(RationalNumber x) {
-		return new RationalNumber(this.nominator * x.getDenominator(), this.denominator * x.getNominator()).reduce();
+		return new RationalNumber(this.numerator * x.getDenominator(), this.denominator * x.getNominator()).reduce();
 	}
 	
 	/**
@@ -139,15 +139,15 @@ public class RationalNumber {
 	 * @return The rational number as a Double
 	 */
 	public double toDouble() {
-		return (double) (nominator / denominator);
+		return (double) (numerator) / denominator;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "RationalNumber [nominator=" + nominator + ", denominator="
+		return "RationalNumber [numerator=" + numerator + ", denominator="
 				+ denominator + ", toDouble()=" + toDouble() + "]";
 	}
 }
