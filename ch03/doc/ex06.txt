@@ -1,0 +1,7 @@
+<pre><p>Take your solution for the CashRegister class from Ex01. 
+
+Implement a new test program, which opens respective dialog boxes to enter the purchase amount, the number of dollars, the number of quarters, the number of dimes, and the number of nickels.
+
+At the end, open another dialog box to display the change. 
+
+Ask to user to continue (start over) or to cancel the program.</p></pre>
