@@ -1,0 +1,10 @@
+<pre><p>Write a program that prints all the real solutions to the quadratic equation ax^2+bx+c = 0. Read in the coefficients a, b, c and use the quadratic formula to find the solution:
+
+x1 = (-b + sqrt(b^2-4ac)) / 2a,
+x2 = (-b - sqrt( b^2-4ac)) / 2a,
+
+If the discriminant d = b^2-4ac is negative, display a message stating that there is no real solution. 
+
+To solve this problem, first implement a class QuadraticEquation whose constructor receives the coefficients a, b, c of the quadratic equation. Supply methods getSolution1() and getSolution2() that return the two solutions, or 0 if no solution exists. The getSolution1 method should return the smaller of the two solutions. Supply a method hasSolution() that returns false if the discriminant is negative.
+
+Then write a test class QuadraticEquationTester that reads in the coefficients, constructs a QuadraticEquation object, and prints the two solutions.</p></pre>

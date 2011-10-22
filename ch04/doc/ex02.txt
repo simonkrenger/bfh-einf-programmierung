@@ -1,0 +1,7 @@
+<pre><p>Write a recursive Java method checksum(int n), which computes the checksum (Quersumme) of an integer n.
+
+Examples: 
+checksum(23) =&gt; 5
+checksum(278437) =&gt; 31
+
+To solve this problem, use the Java operators / and % to compute the integer division and the modulus, respectively.</p></pre>

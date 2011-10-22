@@ -1,0 +1,13 @@
+<pre><p>A line in the plane can be specified in various ways:
+- by giving two different points (x1,y1) and (x2,y2)
+- by giving a point (x,y) and a slope m
+- as parameters b, m of an equation of the form y = mx + b
+- as an equation x = a, if the line is vertical
+Implement a class Line with four constructor, corresponding to the four cases above. Then implement the following methods:
+boolean isVertical()
+boolean isHorizontal()
+boolean equals(Line other)
+boolean isParallel(Line other)
+boolean intersects(Line other)
+
+</p></pre>

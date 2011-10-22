@@ -1,0 +1,1 @@
+<pre><p>Consider your solution of the previous exercise. Try to write the methods before, after, and equal without using a single if/else statement.</p></pre>

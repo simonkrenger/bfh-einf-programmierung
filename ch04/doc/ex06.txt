@@ -1,0 +1,4 @@
+<pre><p>Simplify the following Boolean expressions:
+
+1) [(A OR B OR C) AND (NOT A OR B)] OR C
+2) NOT [NOT (NOT A OR B) OR (A AND C)] OR NOT (B AND A)</p></pre>

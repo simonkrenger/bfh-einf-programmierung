@@ -1,0 +1,45 @@
+<pre><p>Consider the problem of comparing two points in time, each given as hours (from 0 to 23), minutes (from 0 to 59), and second (from 0 to 59). For this, complete the following Java class Time, which includes a method compareWith to compare two points in time.
+
+public class Time
+{
+   private int hour;
+   private int minute;
+   private int second;
+   
+   public Time(int anHour, int aMinute, int sSecond)
+   {
+      . . .
+   }
+
+   /**
+      Compares this time against another time.
+      @param time2 the time to compare with
+      @return true if this time comes before time2, false otherwise
+   */   
+   public boolean before(Time time2)
+   {
+      . . .   
+   }
+
+   /**
+      Compares this time against another time.
+      @param time2 the time to compare with
+      @return true if this time comes after time2, false otherwise
+   */   
+   public boolean after(Time time2)
+   {
+      . . .   
+   }
+
+   /**
+      Compares this time against another time.
+      @param time2 the time to compare with
+      @return true if this time and time2 are the same, false otherwise
+   */   
+   public boolean equals(Time time2)
+   {
+      . . .   
+   }
+}
+
+To test this class, write a program that prompts the user for two points in time and then prints them in the right order. If the two points in time are the same, print them only once.</p></pre>
