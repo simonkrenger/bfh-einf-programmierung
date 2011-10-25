@@ -62,13 +62,7 @@ public class Time {
 			else if (this.getMinute() == time2.getMinute())
 				if (this.getSecond() < time2.getSecond())
 					return true;
-				else
-					return false;
-			else
-				return false;
-		else
-			return false;
-
+		return false;
 	}
 
 	/**
@@ -87,12 +81,7 @@ public class Time {
 			else if (this.getMinute() == time2.getMinute())
 				if (this.getSecond() > time2.getSecond())
 					return true;
-				else
-					return false;
-			else
-				return false;
-		else
-			return false;
+		return false;
 	}
 
 	/**
