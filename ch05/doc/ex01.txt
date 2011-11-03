@@ -1,0 +1,14 @@
+<pre><p>The number pi=3.141592653... can be computed approximately as follows:
+
+pi = 4 * (1 - 1/3 + 1/5 - 1/7 + 1/9 - &Eacute;).
+
+Write a Java program which computes pi with a precision of 3 places after the decimal point. How many iterative steps are needed for that?
+
+For your solution, you may want to use the following method for rounding down a number to k places after the decimal point:
+
+public static double round(double n, int k)
+{	
+	double c = Math.pow(10,k);
+	return Math.floor(n * c) / c;
+}
+</p></pre>

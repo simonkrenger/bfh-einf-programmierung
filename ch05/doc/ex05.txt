@@ -1,0 +1,11 @@
+<pre><p>A possible (but quite risky&Eacute;) strategy in Roulette is to bid $1, let's say on Black. If Black loses (with probability 19/37), the strategy is to bid $2, again on black. If Black looses again, continue to bid $4, $8, $16, etc. on Black until Black wins. Note that as soon as Black wins, you win exactly $1 more than the total amount invested so far. Keep this $1 as your &quot;return of investment&quot; and continue to play the same strategy, i.e. start again with bidding $1 on Black and collect the $1 obtained in each round. 
+
+Write a simulation of a Roulette player who plays this strategy with a total amount of $100 to invest. What is the probability of winning $100 (and leaving the Roulette table with $200) by playing the above strategy until a balance of $200 is reached (in $1 steps) or all the money is lost. Compare this probability with the probability of winning when bidding the full amount of $100 on Black. 
+
+Write a class Roulette with the following public methods: 
+- Boolean play(int amount) {...} // a single bid, returns true if winning
+- void playStrategy() {...} // play the strategy until winning $1 or losing everything
+- int getBalance() {&Eacute;} // returns the current balance
+
+Write a class RouletteTester, which plays the strategy e.g. 100000 times and computes probability of winning $100.
+</p></pre>

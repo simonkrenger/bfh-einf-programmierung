@@ -1,0 +1,6 @@
+<pre><p>Write a program that ask the user for an integer and then prints out all its factors in increasing order. For example, when the user enters 150, the program should print:
+2
+3
+5
+5
+</p></pre>
