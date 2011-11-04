@@ -15,8 +15,9 @@ public class PiCalculatorTester {
 	public static void main(String[] args) {
 		PiCalculator pc = new PiCalculator();
 		
-		System.out.println(pc.calcPi(6));
-		System.out.println(pc.getLastRunIterations());
+		// Calculate PI for 7 places after the decimal point
+		System.out.println(pc.calcPi(7));
+		System.out.println("It took " + pc.getLastRunIterations() + " iterations.");
 
 	}
 

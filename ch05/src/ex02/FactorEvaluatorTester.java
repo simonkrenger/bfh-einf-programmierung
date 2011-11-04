@@ -12,7 +12,11 @@ public class FactorEvaluatorTester {
 		System.out.print("Please enter a number: ");
 		int number = myscan.nextInt();
 		
+		System.out.println("Using my method:");
 		FactorEvaluator.printFactors(number);
+		
+		System.out.println("Using the teachers method:");
+		FactorEvaluator.printFactorsTeacher(number);
 
 	}
 
