@@ -1,33 +1,33 @@
-<pre><p>One of the oldest numerical algorithms was described by the Greek mathematician Euclid in 300 B.C. It is a simple but very effective algorithm that computes the greatest common divisor of two given integers.  
+Write a method printGrid(int n, int m), which prints a grid with n rows and m columns. 
+Example: printGrid(4,9)
 
-For instance, given integers 24 and 18, the greatest common divisor is 6, because 6 is the largest integer that divides evenly into both 24 and 18. We will denote the greatest common divisor of x and y as gcd(x, y).  The algorithm is based on the clever idea that 
++-+-+-+-+-+-+-+-+-+  // row 1
+| | | | | | | | | |
++-+-+-+-+-+-+-+-+-+
+| | | | | | | | | |
++-+-+-+-+-+-+-+-+-+
+| | | | | | | | | |
++-+-+-+-+-+-+-+-+-+
+| | | | | | | | | |
++-+-+-+-+-+-+-+-+-+  // row n
 
-gcd(x, y) = gcd(x &ETH; y, y), if x &gt;= y.
+Write a second method printGrid(int n, int m, int z), which prints a grid as above but with a cell size z.
+Example: printGrid(4,9,3)
 
-The algorithm consists of a series of steps where the larger integer is replaced by the difference of the larger and smaller integer.  
-
-In the example below, we compute gcd(72,54) and list each loop iteration computation on a separate line.  The whole process stops when one of the integers becomes zero.  When this happens, the greatest common divisor is the non-zero integer.
-
-       gcd(72, 54) = gcd(72 &ETH; 54, 54) = gcd(18, 54)
-       gcd(18, 54) = gcd(18, 54 &ETH; 18) = gcd(18, 36)
-       gcd(18, 36) = gcd(18, 36 &ETH; 18) = gcd(18, 18)
-       gcd(18, 18) = gcd(18 &ETH; 18, 18) = gcd(0, 18) = 18
-       
-Write Euclid's algorithm in Java. Use the code below to prompt the user for the two integers.
-
-public class GCD
-{
-   public static void main(String[] args)
-   {
-      Scanner in = new Scanner(System.in);
-      System.out.println(&quot;Enter the first integer: &quot;);
-      int x = in.nextInt();
-      System.out.println(&quot;x = &quot; + x);
-      System.out.println(&quot;Enter the second integer: &quot;);
-      int y = in.nextInt();
-      System.out.println(&quot;y = &quot; + y);
-      // Your gcd computation code goes here
-   }    
-}
-
-If the gcd algorithm works correctly for a single pair of integers, add a surrounding outer loop that allows the user to keep computing gcd's for different pairs of integers.  Use a sentinel value on the outer loop to allow the user to terminate the entire process.</p></pre>
++---+---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
+|   |   |   |   |   |   |   |   |   |
++---+---+---+---+---+---+---+---+---+
