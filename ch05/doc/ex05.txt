@@ -1,0 +1,1 @@
+Write a graphical application that draws a spiral, such as the one shown in the file &quot;ex05.png&quot;.
