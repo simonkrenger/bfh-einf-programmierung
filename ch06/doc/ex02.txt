@@ -1,0 +1,1 @@
+Initialize an integer array of size N with numbers 1 to N. Write a static method void shuffle(int[] values) which shuffles the values of the array according to some shuffling strategy.

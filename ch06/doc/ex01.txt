@@ -1,0 +1,3 @@
+Write a loop that fills an integer array of a given size N <= 100 with random numbers between 1 and 100.
+
+Write another loop that fills an array with DIFFERENT random numbers.

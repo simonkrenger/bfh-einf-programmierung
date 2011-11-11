@@ -1,0 +1,16 @@
+A "magic square" is an NxN matrix that is filled with the numbers 1 to N^2 such that the sum of the values in each row, in each column, and in the two diagonals is the same value M = N(N^2+1)/2. Example: N=3, M=15
+ 6  7  2
+ 3  4  8
+ 9  1  5
+
+a) Write a class MagicSquare with a constructor that works as follows (only if N is odd):
+- Place a 1 in the middle of the bottom row
+- After the number k has been placed in the cell at index (i,j), try to place the number k+1 into the cell to the right and down, wrapping around the borders.
+- If the cell to the right an down is already occupied, place it into the cell straight up instead.
+If N is even, construct a magic square for N+1.
+
+OPTIONAL:
+b) Add the following methods to the MagicSquare class:
+- int magicNumber(): returns M
+- boolean isMagic(): returns true if the square is magic, false otherwise
+- void print(): prints the magic square

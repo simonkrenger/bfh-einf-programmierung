@@ -1,0 +1,60 @@
+Implement a class Purse for storing a collection of coins (Quarter, Dime, Nickel, Penny) in an array list. Write the following methods:
+
+- void addCoin(String coinName): adds a coin to the purse
+
+- String toString(): "prints" the purse into a string, for example "PURSE[Nickel Nickel Dime Nickel Quarter Quarter Dime]"
+
+- void transferTo(Purse other): transfers all coins to another purse
+
+- void transferFrom(Purse other): transfers all coins from another purse
+
+- int sum(): computes the total value of the purse (in cents)
+
+- boolean sameValue(Purse other): checks whether another purse has the same total value
+
+- boolean sameCoins(Purse other): checks whether another purse has the same coins (possibly in a different order)
+
+Test the program with the following test class:
+
+public class PurseTester
+{
+   public static void main(String[] args)
+   {
+      Purse a = new Purse();
+      a.addCoin("Quarter");
+      a.addCoin("Quarter");
+      a.addCoin("Dime");
+      a.addCoin("Penny");
+      a.addCoin("Quarter");
+      System.out.println(a.toString());
+      System.out.println(a.sum());
+      
+      Purse b = new Purse();
+      b.addCoin("Quarter");
+      b.addCoin("Dime");
+      b.addCoin("Penny");
+      b.addCoin("Quarter");
+      b.addCoin("Quarter");
+      System.out.println(b.toString());
+      System.out.println(b.sum());
+      
+      System.out.println(a.sameValue(b));
+      System.out.println(a.sameCoins(b));
+      
+      Purse c = new Purse("Quarter", "Dime", "Dime", "Dime", "Penny", "Quarter", "Nickel");
+      System.out.println(c.toString());
+      System.out.println(c.sum());
+
+      System.out.println(a.sameValue(c));
+      System.out.println(a.sameCoins(c));
+
+      c.transferTo(a);
+      System.out.println(a.toString());
+      System.out.println(c.toString());
+
+      a.transferFrom(b);
+      System.out.println(a.toString());
+      System.out.println(b.toString());
+
+   }
+}

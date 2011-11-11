@@ -1,0 +1,12 @@
+Expand the IntegerList class discussed during the course with the following additional methods:
+
+a) boolean contains(int x): returns true if x is included in the list, false otherwise
+
+b) int position(int x): returns the position of x in the list (or -1 if x is not included in the list)
+
+c) String swap(int i, int j): swaps the integers stored at positions i and j (returns an error message or a string which confirms the swapping)
+
+d) void reverse(): reverses the order of the elements in the list
+
+OPTIONAL
+e) sort(): sorts the integer list in ascending order using the bubble sort algorithm (see step-by-step example on http://en.wikipedia.org/wiki/Bubble_sort)
