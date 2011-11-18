@@ -196,14 +196,14 @@ public class ExtendedIntegerList {
 	 * classroom.
 	 */
 	public void sort() {
-		for(int steps = size-1; steps >=0; steps--) {
-			for(int j=0; j< steps; j++) {
-				if(integers[j] > integers[j+1])
-					doSwap(j, j+1);
+		for (int steps = size - 1; steps >= 0; steps--) {
+			for (int j = 0; j < steps; j++) {
+				if (integers[j] > integers[j + 1])
+					doSwap(j, j + 1);
 			}
 		}
 	}
-	
+
 	/**
 	 * Reads the size of the list
 	 * 
