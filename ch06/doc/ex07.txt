@@ -1,0 +1,115 @@
+The "Game of Life" is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves.
+
+The Game of Life plays on an infinite two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, alive or dead. Every cell interacts with its eight neighbours. At each step in time, the following transitions occur:
+
+1) Any live cell with fewer than two live neighbours dies (under-population)
+2) Any live cell with two or three live neighbours lives on
+3) Any live cell with more than three live neighbours dies (overcrowding)
+4) Any dead cell with exactly three live neighbours becomes a live cell
+
+The initial pattern constitutes the seed of the system. The first generation is created by applying the above rules simultaneously to every cell in the seed. The rules continue to be applied repeatedly to create further generations.
+
+Implement the "Game of Life" in Java under the following simplifying assumption:
+
+1) The size of the grid is n x m
+2) The left and right edges of the grid are stitched together, and the top and bottom edges also, yielding a "toroidal array"
+
+Write a class "GameOfLife" based on the following template:
+
+public class GameOfLife {
+	
+	private int width;
+	private int height;
+	private int[][] cells;
+	
+	public GameOfLife(int n, int m) {
+...
+	}
+		
+	public int getWidth() {
+...
+	}
+	
+	public int getHeight () {
+...
+	}
+
+	public void setCell(int i, int j) {
+...
+	}
+	
+	public int getCell(int i, int j) {
+...
+	}
+	
+	public void nextGeneration() {
+...
+	}
+
+	private int countNeighbors(int i, int j) {
+...
+	}
+	
+	public void createBlinker(int i, int j) {
+		setCell(i,j);
+		setCell(i+1,j);
+		setCell(i+2,j);
+	}
+
+	public void createGlider(int i, int j) {
+		setCell(i,j);
+		setCell(i+1,j);
+		setCell(i+1,j-2);
+		setCell(i+2,j);
+		setCell(i+2,j-1);
+	}
+
+	public void createPentomino(int i, int j) {
+		setCell(i,j);
+		setCell(i+1,j);
+		setCell(i+1,j+1);
+		setCell(i+1,j-1);
+		setCell(i+2,j-1);
+	}
+}
+
+You can also use the following test class:
+
+package ex07;
+
+import javax.swing.JFrame;
+
+public class GameOfLifeViewer
+{
+	public static void main(String[] args) throws InterruptedException
+	{
+		JFrame frame = new JFrame();
+
+		final int WIDTH = 60;
+		final int HEIGHT = 60;
+		final int CELL_SIZE = 8;
+		final int FRAME_WIDTH = WIDTH * CELL_SIZE;
+		final int FRAME_HEIGHT = HEIGHT * CELL_SIZE + 23; // plus window header
+		final int DELAY = 100;
+
+		frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+		frame.setTitle("Game of Life");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		GameOfLife game = new GameOfLife(WIDTH, HEIGHT);
+		game.createBlinker(10,10);
+		game.createBlinker(10,30);
+		game.createGlider(20,30);
+		game.createPentomino(50,50);
+
+		GameOfLifeComponent component = new GameOfLifeComponent(game, (double)CELL_SIZE);
+		frame.add(component);
+		frame.setVisible(true);
+
+		while (true) {
+			Thread.sleep(DELAY);
+			game.nextGeneration();
+			component.repaint();
+		}
+	}
+}
