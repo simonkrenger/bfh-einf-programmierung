@@ -6,7 +6,10 @@ package ex05;
 import ex05.Purse.Coin;
 
 /**
- * @author simon
+ * Provided tester class for the Purse class.
+ * 18.11.2011: Changed Strings to ENUMs (simon)
+ * 
+ * @author Rolf Haenni, simon
  *
  */
 public class PurseTester
