@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * A class for a purse, implemented with an enum instead of Strings
  * 
  * @author simon
- * @since 28.11.2011
+ * @since 21.11.2011
  * 
  */
 public class Purse {
@@ -19,7 +19,7 @@ public class Purse {
 	 * place of Strings, since I find the solution with Strings quite ugly.
 	 * 
 	 * @author simon
-	 * @since 28.11.2011
+	 * @since 21.11.2011
 	 * 
 	 */
 	public enum Coin {
@@ -39,8 +39,8 @@ public class Purse {
 	 *            Coins that are initially in the purse
 	 */
 	public Purse(Coin... coins) {
-		for (int i = 0; i < coins.length; i++) {
-			addCoin(coins[i]);
+		for (Coin c : coins) {
+			addCoin(c);
 		}
 	}
 
@@ -60,9 +60,8 @@ public class Purse {
 	 */
 	public String toString() {
 		String output = "PURSE[ ";
-		for (int i = 0; i < purseContents.size(); i++) {
-			output += purseContents.get(i) + " ";
-		}
+		for(Coin c : purseContents)
+			output += c + " ";
 		return output += "]";
 	}
 
@@ -73,10 +72,10 @@ public class Purse {
 	 *            The purse the coins will be transfered to
 	 */
 	public void transferTo(Purse other) {
-		for (int i = 0; i < purseContents.size(); i++) {
-			other.addCoin(purseContents.get(i));
-			purseContents.remove(i);
+		for (Coin c : purseContents) {
+			other.addCoin(c);
 		}
+		purseContents.clear();
 	}
 
 	/**
@@ -121,15 +120,11 @@ public class Purse {
 	 */
 	public boolean sameCoins(Purse other) {
 		if (this.sum() == other.sum()) {
-			if (this.getNumberOf(Coin.Quarter) == other
-					.getNumberOf(Coin.Quarter))
-				if (this.getNumberOf(Coin.Dime) == other.getNumberOf(Coin.Dime))
-					if (this.getNumberOf(Coin.Nickel) == other
-							.getNumberOf(Coin.Nickel))
-						if (this.getNumberOf(Coin.Penny) == other
-								.getNumberOf(Coin.Penny))
-							return true;
-			return false;
+			for(Coin cointype : Coin.values()) {
+				if(this.getNumberOf(cointype) != other.getNumberOf(cointype))
+					return false;
+			}
+			return true;
 		}
 		return false;
 	}
@@ -143,8 +138,8 @@ public class Purse {
 	 */
 	private int getNumberOf(Coin c) {
 		int counter = 0;
-		for (int i = 0; i < purseContents.size(); i++) {
-			if (purseContents.get(i).equals(c))
+		for (Coin content : purseContents) {
+			if (content.equals(c))
 				counter++;
 		}
 		return counter;
