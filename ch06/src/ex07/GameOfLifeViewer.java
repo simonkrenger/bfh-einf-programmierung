@@ -4,8 +4,9 @@ import javax.swing.JFrame;
 
 /**
  * Viewer class for the Conway Game of Life provided by the teacher
+ * 
  * @author Rolf Haenni, simon
- *
+ * 
  */
 public class GameOfLifeViewer {
 	public static void main(String[] args) throws InterruptedException {
@@ -27,10 +28,10 @@ public class GameOfLifeViewer {
 		game.createBlinker(10, 30);
 		game.createGlider(20, 30);
 		game.createPentomino(50, 50);
-		
-		//game.createGun(10, 10);
-		
-		//game.createRandom();
+
+		// game.createGun(10, 10);
+
+		// game.createRandom();
 
 		GameOfLifeComponent component = new GameOfLifeComponent(game,
 				(double) CELL_SIZE);
