@@ -9,7 +9,7 @@ package ex06;
  * desired size to STDOUT.
  * 
  * @author simon
- * @since 21.11.2011
+ * @since 25.11.2011
  * 
  */
 public class MagicSquare {
@@ -35,7 +35,7 @@ public class MagicSquare {
 	public MagicSquare(int size) {
 		if (size % 2 == 0) {
 			System.err.println("The size you gave is not odd. Using size="
-					+ size + 1);
+					+ (size + 1));
 			size += 1;
 		}
 
@@ -123,7 +123,7 @@ public class MagicSquare {
 
 		checkValue = 0;
 		for (int n = 0; n < squareSize; n++)
-			checkValue += magicSquare[squareSize - 1 - n][squareSize - 1 - n];
+			checkValue += magicSquare[n][squareSize - 1 - n];
 		if (checkValue != magicNumber)
 			return false;
 
