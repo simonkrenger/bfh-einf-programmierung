@@ -51,42 +51,27 @@ public class MagicSquare {
 	 * happens.
 	 */
 	private void fillSquare() {
+		
+		int x = (squareSize / 2);
+		int y = squareSize - 1;
 
 		// The last number will be squareSize^2
-		int lastNumber = squareSize * squareSize;
-		int currentX = 0;
-		int currentY = 0;
+		for (int counter = 1; counter <= (squareSize * squareSize); counter++) {
 
-		for (int counter = 1; counter <= lastNumber; counter++) {
-			// Rule 1: Place a 1 in the middle of the bottom row
-			if (counter == 1) {
-				currentX = (squareSize / 2);
-				currentY = squareSize - 1;
-			} else {
-				// Rule 2: Check if we need to wrap around
-				if (currentX + 1 >= squareSize || currentY + 1 >= squareSize) {
-					if (currentX + 1 >= squareSize) {
-						// Set to -1 so we get 0 after incrementing
-						currentX = -1;
-					}
-					if (currentY + 1 >= squareSize) {
-						// Set to -1 so we get 0 after incrementing
-						currentY = -1;
-					}
-				}
+			magicSquare[x][y] = counter;
 
-				// Go one down and one to the right
-				currentX++;
-				currentY++;
-
-				// Rule 3: Check if that cell is already filled
-				if (magicSquare[currentX][currentY] != 0)
-					currentY--;
-			}
-			magicSquare[currentX][currentY] = counter;
-
-			// print(); // Debug
+			// System.out.println(this); // Debug
 			// System.out.println("---------"); // Debug
+
+			int newX = (x + 1) % squareSize;
+			int newY = (y + 1) % squareSize;
+
+			if (magicSquare[newX][newY] == 0) {
+				x = newX;
+				y = newY;
+			} else {
+				y--;
+			}
 		}
 	}
 
@@ -101,35 +86,64 @@ public class MagicSquare {
 
 	/**
 	 * Checks if this magic square is actually magic by calculating the magic
-	 * number and then checking if the sum of all rows are equal to
-	 * that magic number.
+	 * number and then checking if the sum of all rows, columns and diagonals
+	 * are equal to that magic number.
 	 * 
 	 * @return Returns true if all sums are equal to the magic number
 	 */
 	public boolean isMagic() {
 		int magicNumber = magicNumber();
 
+		int checkValue = 0;
+
 		// Check all rows
 		for (int y = 0; y < squareSize; y++) {
-			int value = 0;
+			checkValue = 0;
 			for (int x = 0; x < squareSize; x++)
-				value += magicSquare[x][y];
-			if (value != magicNumber)
+				checkValue += magicSquare[x][y];
+			if (checkValue != magicNumber)
 				return false;
 		}
+
+		// Check all columns
+		for (int x = 0; x < squareSize; x++) {
+			checkValue = 0;
+			for (int y = 0; y < squareSize; y++)
+				checkValue += magicSquare[x][y];
+			if (checkValue != magicNumber)
+				return false;
+		}
+
+		// Check two diagonals
+		checkValue = 0;
+		for (int n = 0; n < squareSize; n++)
+			checkValue += magicSquare[n][n];
+		if (checkValue != magicNumber)
+			return false;
+
+		checkValue = 0;
+		for (int n = 0; n < squareSize; n++)
+			checkValue += magicSquare[squareSize - 1 - n][squareSize - 1 - n];
+		if (checkValue != magicNumber)
+			return false;
+
 		return true;
 	}
 
 	/**
 	 * Prints the magic square for your viewing pleasure.
+	 * 
+	 * @return
 	 */
-	public void print() {
+	public String toString() {
+		String output = "";
 		for (int y = 0; y < squareSize; y++) {
-			System.out.print("[ ");
+			output += "[ ";
 			for (int x = 0; x < squareSize; x++) {
-				System.out.print(magicSquare[x][y] + " ");
+				output += magicSquare[x][y] + " ";
 			}
-			System.out.println("]");
+			output += "]\n";
 		}
+		return output;
 	}
 }

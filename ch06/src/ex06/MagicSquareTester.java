@@ -24,7 +24,8 @@ public class MagicSquareTester {
 		int sqSize = in.nextInt();
 		
 		MagicSquare m = new MagicSquare(sqSize);
-		m.print();
+		System.out.println(m);
+		
 		
 		System.out.println("The magic number is " + m.magicNumber());
 		
