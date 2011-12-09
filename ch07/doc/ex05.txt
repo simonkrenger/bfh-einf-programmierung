@@ -1,0 +1,17 @@
+Continue implementing your Panini simulation. Define corresponding classes for 
+- children, 
+- the schoolyard.
+
+The main public methods of a child should do the following:
+- receive some pocket money
+- buy a picture package and add them to the album
+- exchange duplicate pictures with another child
+The exchanging of picture is the most complicated task, you may postpone it to a later moment
+
+The main public methods of the schoolyard should do the following:
+- let a new child enter the schoolyard
+- let a child leave the schoolyard
+- randomly pick a child to receive some pocket money
+- randomly pick a child to buy a new picture package
+- randomly pick two children to exchange their duplicates
+If a child has filled up the album, it leaves the schoolyard.

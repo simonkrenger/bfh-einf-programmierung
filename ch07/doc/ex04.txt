@@ -1,0 +1,6 @@
+Continue implementing your Panini simulation. Define corresponding classes for 
+- the factory, 
+- the shop.
+Suppose that there is exactly one factory and exactly one shop, i.e. try to      use the "singleton pattern" to implement these classes. The main public methods of these classes should do the following:
+- Factory: deliver a box of pictures (producing them is a private issue of the class).
+- Shop: sell a picture package (ordering a new box from the factory is a private issue of the class)

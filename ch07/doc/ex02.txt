@@ -1,0 +1,5 @@
+Start implementing your Panini simulation. Define corresponding classes for 
+- the players, 
+- the teams, 
+- the list of teams.
+Specify for each of these classes appropriate constructors and methods. If necessary, specify corresponding pre- and postconditions. Implement the classes and put them into a package "panini" (or similar). Consider implementing corresponding JUnit testing classes.

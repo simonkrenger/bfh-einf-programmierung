@@ -1,0 +1,17 @@
+Consider implementing a simulation of the Panini football picture trading on the schoolyard. Consider the following aspects:
+
+- There are 10 teams. Each team consists of 2 goalkeepers, 6 defenders, 6 midfielders, and 4 attackers. Each player has a number, a name, an age, and a function (goalkeeper, defender, midfielder, attacker).
+
+- The Panini picture factory produces random pictures of the players, packs them into packages of 4 pictures each, and delivers a box of 50 packages to the shop. The production of a box costs $10 and the price for a box is $25. If no boxes are available for delivering, 10 new boxes are produced.
+
+- The shop sells the picture packages for $1 to the children. The shop orders a new new box of picture packages from the factory if no packages are left.
+
+- Each child has a certain amount of money available to buy new pictures. At the beginning, this amount is $0. From time to time, some children receive a certain amount of pocket money.
+
+- Each child posses an album for collecting the pictures. The album contains an area for the picture of each player.
+
+- Children exchange duplicate pictures to fill up the album more quickly.
+
+- The simulation selects at random some children who receive pocket money, buy packages, and exchange duplicate pictures. If the album is filled up, the child leaves the schoolyard.
+
+Design appropriate classes to model the entities included in such a simulation. Draw an UML class diagram which shows the dependencies between the classes. What is the information to be stored in each class?

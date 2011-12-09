@@ -1,0 +1,6 @@
+Continue implementing your Panini simulation. Define corresponding classes for 
+- pictures, 
+- packages,
+- boxes,
+- albums.
+Specify for each of these classes appropriate constructors and methods. If necessary, specify corresponding pre- and postconditions. Note that the list of teams needs to be passed as argument to each of the constructors.

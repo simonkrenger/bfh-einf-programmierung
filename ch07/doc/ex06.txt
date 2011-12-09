@@ -1,0 +1,11 @@
+Conclude your Panini simulation by defining corresponding classes for 
+- the simulation, 
+- testing the simulation.
+
+The simulation should provide a single public method "run", which repeats the following tasks until all children have left the schoolyard:
+- several children receive some pocket money
+- several children buy a new picture package
+- several children exchange their duplicates
+After each of these tasks, the current state of the simulation should be printed (state of the factory, the shop, and schoolyard).
+
+The simulation tester should create a list of teams, a shop, a factory, and a schoolyard with some children, and then start the simulation.
