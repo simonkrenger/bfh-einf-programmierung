@@ -62,7 +62,7 @@ public class Schoolyard {
 			c.shopping();
 			if (c.hasDuplicates()) {
 				for (Child peer : children) {
-					if (!peer.equals(c)) {
+					if (!(c == peer)) {
 						c.exchange(peer);
 					}
 				}
@@ -70,8 +70,14 @@ public class Schoolyard {
 		}
 
 		for (int i = 0; i < children.size(); i++) {
-			if (children.get(i).hasCompleteAlbum())
+			if (children.get(i).hasCompleteAlbum()) {
+
+				// Elvis has left the building
+				System.out.println(children.get(i).getName()
+						+ " has a complete album and leaves the schoolyard.");
+
 				children.remove(i);
+			}
 		}
 	}
 }

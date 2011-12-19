@@ -88,8 +88,8 @@ public class Factory {
 				ppbox.addPackage(pp);
 			}
 			stock.add(ppbox);
+			balance = balance - PicturePackageBox.getBoxProductionCost();
 		}
-		balance = balance - PicturePackageBox.getBoxProductionCost();
 	}
 
 	/**

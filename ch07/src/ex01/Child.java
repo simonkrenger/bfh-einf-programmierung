@@ -38,6 +38,11 @@ public class Child {
 	private int balance = 0;
 
 	/**
+	 * Amount the child spent
+	 */
+	private int expenses = 0;
+
+	/**
 	 * Constructor for the class. Generates a random name for the child.
 	 */
 	public Child() {
@@ -77,12 +82,14 @@ public class Child {
 			if (balance >= f.getAlbumPrice()) {
 				album = f.sellAlbum();
 				balance = balance - f.getAlbumPrice();
+				expenses += f.getAlbumPrice();
 			}
 		} else {
 			Shop s = Shop.getInstance();
 			// As long as the child has enough money to buy packages, do so
 			while (balance >= s.getPackagePrice()) {
 				balance = balance - s.getPackagePrice();
+				expenses += s.getPackagePrice();
 				PicturePackage pack = s.sellPackage();
 
 				for (Picture p : pack.unpack()) {
@@ -121,17 +128,6 @@ public class Child {
 	}
 
 	/**
-	 * Method to remove a certain picture from the duplicates (usually used to
-	 * exchange pictures)
-	 * 
-	 * @param p
-	 *            The picture that needs to be removed from the duplicates
-	 */
-	private void removeFromDuplicates(Picture p) {
-		duplicates.remove(p);
-	}
-
-	/**
 	 * Method to exchange duplicates with another child. This method checks if
 	 * the child needs a picture from the other child and trades it.
 	 * 
@@ -141,26 +137,50 @@ public class Child {
 	public void exchange(Child peer) {
 		if (peer.hasDuplicates() && this.hasDuplicates()) {
 
-			// Just as a warning, the following code is quite ugly.
-			// To be refactored!
+			// Get the "wants" of both children
+			ArrayList<Picture> myWants = this.getWants(peer.getDuplicates());
+			ArrayList<Picture> peerWants = peer.getWants(this.getDuplicates());
 
-			ArrayList<Picture> myDuplicates = this.getDuplicates();
-			ArrayList<Picture> peerDuplicates = peer.getDuplicates();
-
-			while (this.checkDuplicates(peerDuplicates)
-					&& peer.checkDuplicates(myDuplicates)) {
-				// We both have pictures we want to trade
-
-				Picture myWant = this.getMissingDuplicate(peerDuplicates);
-				Picture peerWant = peer.getMissingDuplicate(myDuplicates);
-
-				this.addPicture(myWant);
-				peer.removeFromDuplicates(myWant);
-
-				peer.addPicture(peerWant);
-				this.removeFromDuplicates(peerWant);
+			while ((myWants.size() > 0) && (peerWants.size() > 0)) {
+				this.transferPictureTo(peer,
+						peerWants.remove(peerWants.size() - 1));
+				peer.transferPictureTo(this, myWants.remove(myWants.size() - 1));
 			}
 		}
+	}
+
+	/**
+	 * Retrieves the pictures in a pile of duplicates that this child wants.
+	 * This method can be used to get a list of pictures the child wants to
+	 * trade.
+	 * 
+	 * @param peerDuplicates
+	 *            Duplicates of another child that are looked through
+	 * @return A list of pictures from the duplicates of the peer
+	 */
+	public ArrayList<Picture> getWants(ArrayList<Picture> peerDuplicates) {
+		ArrayList<Picture> temp = new ArrayList<Picture>();
+		for (Picture p : peerDuplicates) {
+			if (!(album.isPictureInAlbum(p))) {
+				temp.add(p);
+			}
+		}
+		return temp;
+	}
+
+	/**
+	 * Method to transfer a duplicate picture from this child to another child.
+	 * The duplicate specified is transfered to the other child and removed from
+	 * this childs duplicates.
+	 * 
+	 * @param peer
+	 *            The other child that the picture is transfered to
+	 * @param p
+	 *            The picture to be transfered
+	 */
+	public void transferPictureTo(Child peer, Picture p) {
+		peer.addPicture(p);
+		duplicates.remove(p);
 	}
 
 	/**
@@ -177,38 +197,6 @@ public class Child {
 		} else {
 			album.putInAlbum(p);
 		}
-	}
-
-	/**
-	 * Ugly method to check if the peer child has some duplicates that this
-	 * child wants
-	 * 
-	 * @param peerDuplicates
-	 *            The duplicates of the peer
-	 * @return Returns TRUE if there is a picture in the duplicates we still
-	 *         need.
-	 */
-	private boolean checkDuplicates(ArrayList<Picture> peerDuplicates) {
-		for (Picture p : peerDuplicates) {
-			if (!(album.isPictureInAlbum(p)))
-				return true;
-		}
-		return false;
-	}
-
-	/**
-	 * Method to get the missing duplicates (UGLY!)
-	 * 
-	 * @param peerDuplicates
-	 *            Duplicates of a peer
-	 * @return The missing pictures
-	 */
-	private Picture getMissingDuplicate(ArrayList<Picture> peerDuplicates) {
-		for (Picture p : peerDuplicates) {
-			if (!(album.isPictureInAlbum(p)))
-				return p;
-		}
-		return null;
 	}
 
 	/**
@@ -243,11 +231,10 @@ public class Child {
 	 */
 	@Override
 	public String toString() {
-		return "Child [name=" + name + ", balance=" + balance
-				+ ", hasDuplicates()=" + hasDuplicates()
+		return "Child [name=" + name + ", balance=" + balance + ", expenses="
+				+ expenses + ", hasDuplicates()=" + hasDuplicates()
 				+ ", getNumberOfDuplicates()=" + getNumberOfDuplicates()
 				+ ", hasCompleteAlbum()=" + hasCompleteAlbum()
 				+ ", missingPictures()=" + missingPictures() + "]";
 	}
-
 }

@@ -64,27 +64,29 @@ public class PaniniSimulation {
 	public void run() {
 
 		// Variable hold the number of runs in a simulation
-		int runNumber = 1;
-
+		int dayNumber = 1;
 		Random rand = new Random();
 
 		do {
-			System.out.println("Run number=" + runNumber++);
+			System.out.println("Day number " + dayNumber++ + ", "
+					+ yard.getChildren().size()
+					+ " child(ren) on the schoolyard.");
 
 			for (Child schoolchild : yard.getChildren()) {
 				// Does this child get pocket money?
 				if (rand.nextBoolean()) {
 					// Alright, just how much?
-					schoolchild.addMoney(rand.nextInt(MAX_POCKET_MONEY + 1));
+					schoolchild.addMoney(rand.nextInt(MAX_POCKET_MONEY) + 1);
 				}
 				System.out.println(schoolchild);
 			}
 			System.out.println(Factory.getInstance());
 			System.out.println(Shop.getInstance());
-			System.out.println("--");
 
 			yard.recess();
 
+			System.out.println("--");
 		} while (yard.hasChildren());
+		System.out.println("Simulation finished after " + dayNumber + " days");
 	}
 }
