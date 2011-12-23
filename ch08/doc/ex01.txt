@@ -1,0 +1,5 @@
+Schreiben Sie ein Interface "Polygon", welches zwei Methoden für das Zurückgeben der Fläche und des Umfangs bereitstellt.
+
+Schreiben Sie zwei Klassen "Circle" und "Square", welche beide das "Polygon" Interface implementieren.
+
+In der Testklasse, erzeugen Sie eine ArrayList und füllen Sie sie mit ein paar Polygonen. Laufen Sie dann die Liste durch und geben Sie deren Elemente mit Fläche und Umfang aus.
