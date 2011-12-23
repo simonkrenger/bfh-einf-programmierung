@@ -1,7 +1,5 @@
-public class DataSetTester 
-{
-	public static void main(String[] args)
-	{
+public class DataSetTester {
+	public static void main(String[] args) {
 		DataSet bankData = new DataSet();
 		bankData.add(new BankAccount(0));
 		bankData.add(new BankAccount(10000));
@@ -18,6 +16,6 @@ public class DataSetTester
 
 		max = coinData.getMaximum();
 		System.out.println("Max. coin value: " + max.getMeasure());
-		System.out.println("Expected: 0.25");            
+		System.out.println("Expected: 0.25");
 	}
 }

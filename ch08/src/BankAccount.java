@@ -1,36 +1,29 @@
-public class BankAccount implements Measurable
-{  
+public class BankAccount implements Measurable {
 	private double balance;
 
-	public BankAccount()
-	{   
+	public BankAccount() {
 		balance = 0;
 	}
 
-	public BankAccount(double initialBalance)
-	{   
+	public BankAccount(double initialBalance) {
 		balance = initialBalance;
 	}
 
-	public void deposit(double amount)
-	{  
+	public void deposit(double amount) {
 		double newBalance = balance + amount;
 		balance = newBalance;
 	}
 
-	public void withdraw(double amount)
-	{   
+	public void withdraw(double amount) {
 		double newBalance = balance - amount;
 		balance = newBalance;
 	}
 
-	public double getBalance()
-	{   
+	public double getBalance() {
 		return balance;
 	}
 
-	public double getMeasure()
-	{
+	public double getMeasure() {
 		return balance;
 	}
 }

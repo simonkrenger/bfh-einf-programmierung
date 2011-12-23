@@ -1,4 +1,3 @@
-public interface Measurer 
-{
-    double measure(Object obj);
+public interface Measurer {
+	double measure(Object obj);
 }
