@@ -1,0 +1,13 @@
+Ein Iterator ermöglicht es, durch die Elemente einer Sequenz durchzuiterieren. Definieren Sie dazu ein Interface "Iterator" mit den folgenden Methoden:
+
+boolean hasNext() - Returns true if the iteration has more elements
+Object next() - Returns the next element in the iteration
+void reset() - Resets the iterator
+
+(Bem.: in Java gibt es ein Iterator-Interface, schreiben Sie aber Ihr eigenes)
+
+Benutzen Sie das Interface, um durch einen String, eine ArrayList<String>, ein 2-dimensionale String-Tabelle (zeilenweise), und durch die Ziffern 0 bis 9 zu iterieren. Verwenden Sie dabei die Callback-Methode, d.h. schreiben Sie vier Klassen "StringIterator",  "StringListIterator", "StringTableIterator" und "DigitsIterator", welche das "Iterator"-Interface implementieren.
+
+Testen Sie die 4 Iteratoren.
+
+

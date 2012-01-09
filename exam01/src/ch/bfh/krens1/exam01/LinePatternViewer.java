@@ -11,7 +11,7 @@ import javax.swing.JFrame;
  */
 public class LinePatternViewer {
 
-	private static final int PATTERN_SIZE = 4;
+	private static final int PATTERN_SIZE = 400;
 
 	/**
 	 * @param args
