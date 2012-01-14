@@ -1,0 +1,1 @@
+Write a graphical application with two buttons A and B. Each time Button A respectively Button B is clicked, a counter is increased and the number of click is displayed (separately for Button A and B).
