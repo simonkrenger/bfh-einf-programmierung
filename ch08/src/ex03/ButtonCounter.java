@@ -1,5 +1,6 @@
 package ex03;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -52,6 +53,7 @@ public class ButtonCounter {
 
 		// Place the elements above on a panel
 		JPanel panel = new JPanel();
+		panel.setLayout(new GridLayout(0,2,10,0));
 		panel.add(button_a);
 		panel.add(label_a);
 		panel.add(button_b);
