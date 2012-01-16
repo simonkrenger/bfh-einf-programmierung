@@ -1,0 +1,5 @@
+Implement a frame which allow users to draw triangles. Each time the mouse is pressed, a little red dot is displayed at the mouse cursor position. When the mouse has been pressed three times (three dots), a triangle joining the dots is drawn. After that, you must be able:
+
+1. To change the form of the triangle, by clicking on a dot and dragging it ("rubber-band" effect
+2. To translate the whole triangle by clicking anywhere on the frame and "dragging" the triangle with the mouse (see fig. 3: triangle has been dragged to the right side of the frame).
+3. To clear the frame, in order to draw a next triangle, by clicking on the right mouse button (look in the MouseEvent API to learn how to do this).
